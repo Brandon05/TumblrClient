@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -55,6 +56,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="photoImageView" destination="0dg-EU-ow9" id="V6U-XE-eA8"/>
+                                            <segue destination="DII-6y-son" kind="push" identifier="DetailSegue" id="nhn-ar-wKx"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -75,7 +77,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="672.5" y="154.5"/>
+            <point key="canvasLocation" x="554" y="155"/>
+        </scene>
+        <!--Photos Detail View Controller-->
+        <scene sceneID="1yO-eV-Jyp">
+            <objects>
+                <viewController id="DII-6y-son" customClass="PhotosDetailViewController" customModule="TumblrClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dC7-qY-NZ7"/>
+                        <viewControllerLayoutGuide type="bottom" id="5uL-8K-mib"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v2N-xP-CYA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4wW-lc-BRQ">
+                                <rect key="frame" x="24" y="129" width="327" height="262"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pLf-bi-7P8">
+                                        <rect key="frame" x="8" y="8" width="311" height="246"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="pLf-bi-7P8" secondAttribute="trailing" constant="8" id="CcW-lF-tXk"/>
+                                    <constraint firstAttribute="bottom" secondItem="pLf-bi-7P8" secondAttribute="bottom" constant="8" id="NzD-Rp-e0u"/>
+                                    <constraint firstItem="pLf-bi-7P8" firstAttribute="top" secondItem="4wW-lc-BRQ" secondAttribute="top" constant="8" id="SBc-a5-10j"/>
+                                    <constraint firstItem="pLf-bi-7P8" firstAttribute="leading" secondItem="4wW-lc-BRQ" secondAttribute="leading" constant="8" id="Xdu-6Q-DnP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4wW-lc-BRQ" firstAttribute="top" secondItem="dC7-qY-NZ7" secondAttribute="bottom" constant="65" id="Cog-2F-H1H"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4wW-lc-BRQ" secondAttribute="trailing" constant="8" id="FAk-Uw-pT0"/>
+                            <constraint firstItem="4wW-lc-BRQ" firstAttribute="leading" secondItem="v2N-xP-CYA" secondAttribute="leadingMargin" constant="8" id="UEL-H6-FVe"/>
+                            <constraint firstItem="5uL-8K-mib" firstAttribute="top" secondItem="4wW-lc-BRQ" secondAttribute="bottom" constant="276" id="cyo-gn-8xv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="h6A-Io-xI6"/>
+                    <connections>
+                        <outlet property="baseView" destination="4wW-lc-BRQ" id="1lN-5n-ZKb"/>
+                        <outlet property="photoImageView" destination="pLf-bi-7P8" id="wub-VO-FE1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W9F-05-YID" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1022.5" y="154.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7x1-yW-6w3">
